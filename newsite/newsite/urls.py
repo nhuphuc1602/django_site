@@ -28,7 +28,8 @@ urlpatterns = [
     path('about/', views.about_view, name = 'about'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('login/', profile_view.login_view.as_view(), name = 'login'),
-    path('profile/', profile_view.EditProfileView.as_view(), name = 'profile'),
+    path('accounts/profile/', profile_view.EditProfileView.as_view(), name = 'profile'),
     path('register/', profile_view.RegisterView.as_view(), name = 'register'),
-
+    path('register/ok/', profile_view.RegisterViewOK.as_view(), name = 'register_ok'),
+    path('logout/', profile_view.SiteLogoutView.as_view(), name = 'logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
