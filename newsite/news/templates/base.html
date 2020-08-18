@@ -1,6 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="vi">
   <head>
+    <meta charset = "utf-8">
     <title>Quoted</title>
     <link
       rel="stylesheet"
@@ -8,6 +10,8 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href = "{% static 'css/style.css' %}" rel = "stylesheet"/>
   </head>
 
   <body>
@@ -17,20 +21,23 @@
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class = "collapse navbar-collapse" id = "navbarResponsive">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item {%if nav == 'home'%} active {%endif%}">
             <a class="nav-link" href="/"
               >Home <span class="sr-only">(current)</span></a
             >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/category">Category</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/accounts/profile">Profile</a>
@@ -69,7 +76,7 @@
             </li>
           </ul>
         {%endif%}
-      </div>
+
     </nav>
     {% block content %}{% endblock %}
   </body>

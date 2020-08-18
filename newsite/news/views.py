@@ -16,3 +16,7 @@ def home_view(request):
 
 def about_view(request):
     return render(request, 'about.html', {'nav' : 'about'})
+
+def category_view(request):
+    list_object = Posts.objects.all()
+    return render(request, 'category.html', {'list_object' : list_object, 'nav' : 'home'})

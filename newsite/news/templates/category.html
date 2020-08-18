@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}   
+<h1>Quoted Category</h1>
+  <div class="container quoted_list"> 
+      {% for item in list_object %}
+      <div class="media">
+          <img src="{{item.image.url}}" class="mr-3" alt="...", width="120", height="120">
+          <div class="media-body">
+              <h5 class="mt-0"><a href =""> {{item.name}}</a></h5>
+              <div>Author : {{item.author}}</div>
+              <div>Date upload : {{item.upload_day}}</div>
+              {{item.description}}
+          </div>
+      </div>
+      {% endfor %}
+      
+  </div>
+{% endblock %}
