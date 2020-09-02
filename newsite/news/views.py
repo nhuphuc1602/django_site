@@ -20,3 +20,6 @@ def about_view(request):
 def category_view(request):
     list_object = Posts.objects.all()
     return render(request, 'category.html', {'list_object' : list_object, 'nav' : 'home'})
+
+def moon_view(request):
+    return render(request, 'moon.html')

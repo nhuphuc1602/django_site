@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
+{% load static %}
 
 {% block content %}   
-    <div>About Quoted</div>
+    <img class = "image2" src= "{% static 'img/background_about.png' %}" width="1550" height="700" alt="Background" >
+    <div class = "carousel-caption mt-5 ml-5" >
+        <div class = "display-3">  <strong> About </strong> 
+        <p>Develope and design by Vo Nhu Phuc <br> 
+        <a href="https://github.com/nhuphuc1602/django_site"> Github</a>
+        <a href="https://www.linkedin.com/in/phuc-vo-nhu-452684188/"> Linkedin</a>
+        </p>
+        </div>
+    </div>
 {% endblock %}

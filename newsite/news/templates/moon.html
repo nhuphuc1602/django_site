@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href = "{% static 'css/style_moon.css' %}" rel = "stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>MoonLight</title>
+  </head>
+
+  <body>
+    <a href="/">Back Home</a>
+    <section class  = "moonlight">
+        <img src={% static 'img/moon/bg.jpg' %} id="bg"> 
+        <img src={% static 'img/moon/moon.png' %} id="moon">
+        <img src={% static 'img/moon/mountain.png' %} id="mountain">
+        <img src={% static 'img/moon/road.png' %} id="road">
+        <h2 id = "text"> MoonLight </h2>
+    </section>
+    <script type = "text/javascript"> 
+        let bg = document.getElementById("bg");
+        let moon = document.getElementById("moon"); 
+        let mountain = document.getElementById("mountain"); 
+        let road = document.getElementById("road"); 
+        let text = document.getElementById("text"); 
+
+        window.addEventListener('scroll', function(){
+            var value = window.scrollY;
+            bg.style.top = value * 0.5 + 'px';
+            moon.style.left = -value * 0.5 + 'px';
+            mountain.style.top = value * -0.15 + 'px';
+            text.style.top = value * 0.15 + 'px';
+        })
+    </script>
+   
+  </body>
+</html>
